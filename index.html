@@ -151,7 +151,7 @@
             {
                 "@type": "HowToStep",
                 "name": "AI Analysis",
-                "text": "Click 'Simplify Document' and our AI will analyze the legal language and translate it to plain English",
+                "text": "Click 'Generate Now' and our AI will analyze the legal language and translate it to plain English",
                 "position": 2
             },
             {
@@ -922,7 +922,7 @@
         });
 
         // API endpoint for Vercel
-        const API_ENDPOINT = '/api/simplify';
+        const API_ENDPOINT = '/api/generate-summary';
 
         async function simplifyDocument() {
             const text = textarea.value.trim();
@@ -937,7 +937,7 @@
 
             // Validation
             if (!text) {
-                showError('Please enter some legal text to simplify.');
+                showError('Please enter your request.');
                 return;
             }
 
@@ -961,6 +961,12 @@
                 });
 
                 if (!response.ok) {
+                    const errorData = await response.json();
+                    if (response.status === 429) {
+                        // Rate limit exceeded
+                        showError(errorData.message || 'You have reached your daily limit. Please try again tomorrow!');
+                        return;
+                    }
                     throw new Error('Failed to simplify document');
                 }
 
@@ -972,8 +978,10 @@
                 
             } catch (error) {
                 console.error('Error:', error);
+                showError('Unable to process request. Please try again later.');
                 
-                // Show demo results as fallback
+                // Only show demo results if it's a network error, not rate limit
+                /*
                 const demoData = {
                     simplified: `This document is a legal agreement where you (the first party) agree to protect and defend another person or company (the second party) from any legal problems, claims, or costs that might come up.\n\nIn simple terms:\n• If someone sues the second party for something related to this agreement, you will handle the legal costs\n• You will pay for any damages or settlements that result from these legal issues\n• You take responsibility for defending them in court if needed\n\nThis is called an "indemnification clause" and it's commonly found in service contracts, rental agreements, and business partnerships. It's designed to shift legal risk from one party to another.\n\nNote: This is a demo response. For real AI analysis, the site owner needs to add an OpenAI API key.`,
                     keyPoints: [
@@ -993,7 +1001,7 @@
                 };
                 
                 displayResults(demoData);
-                resetBtn.style.display = 'block';
+                resetBtn.style.display = 'block';*/
             } finally {
                 simplifyBtn.disabled = false;
                 loadingDiv.classList.remove('show');
@@ -1036,6 +1044,11 @@
             const errorDiv = document.getElementById('errorMessage');
             errorDiv.textContent = message;
             errorDiv.classList.add('show');
+        }
+
+        function hideError() {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.classList.remove('show');
         }
 
         function resetForm() {
