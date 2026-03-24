@@ -1,501 +1,1054 @@
-     1|<!DOCTYPE html>
-     2|<html lang="en">
-     3|<head>
-     4|    <meta charset="UTF-8">
-     5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6|    <title>Free AI Text Summarizer | Intelligent Article Summarization Tool</title>
-     7|    <meta name="description" content="Summarize long articles, documents, and texts instantly with AI. Our intelligent summarizer extracts key points and creates concise summaries. Perfect for research and study. No signup required.">
-     8|    <meta name="keywords" content="ai text summarizer, article summarizer, document summarizer, text summary generator, ai summary tool, content summarizer, research summarizer, study tool, text analysis, automatic summarization, reading assistant, summary maker">
-     9|    
-    10|    <!-- Canonical URL -->
-    11|    <link rel="canonical" href="https://ai-text-summarizer.vercel.app/">
-    12|    
-    13|    <!-- Open Graph -->
-    14|    <meta property="og:title" content="Free Legal Document Simplifier - AI-Powered Legal Text Translator">
-    15|    <meta property="og:description" content="Transform complex legal documents into plain English instantly with AI. Free legal jargon decoder for contracts, agreements, and legal text.">
-    16|    <meta property="og:type" content="website">
-    17|    <meta property="og:url" content="https://ai-text-summarizer.vercel.app/">
-    18|    <meta property="og:site_name" content="AI Text Summarizer">
-    19|    <meta property="og:locale" content="en_US">
-    20|    
-    21|    <!-- Twitter Card -->
-    22|    <meta name="twitter:card" content="summary_large_image">
-    23|    <meta name="twitter:title" content="Free Legal Document Simplifier - AI-Powered Legal Text Translator">
-    24|    <meta name="twitter:description" content="Transform complex legal documents into plain English instantly. Free AI-powered legal jargon decoder.">
-    25|    
-    26|    <!-- Additional SEO Meta -->
-    27|    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    28|    <meta name="author" content="AI Text Summarizer">
-    29|    <meta name="theme-color" content="#1e40af">
-    30|    <meta name="mobile-web-app-capable" content="yes">
-    31|    <meta name="apple-mobile-web-app-capable" content="yes">
-    32|    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    33|    <meta name="apple-mobile-web-app-title" content="AI Text Summarizer">
-    34|    
-    35|    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
-    36|    
-    37|    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-    38|    
-    39|    <!-- Auto Ads for Additional Revenue -->
-    40|    <script>
-    41|        (adsbygoogle = window.adsbygoogle || []).push({
-    42|            google_ad_client: "ca-pub-XXXXXXXXXX",
-    43|            enable_page_level_ads: true
-    44|        });
-    45|    </script>
-    46|    
-    47|    <!-- Structured Data: WebApplication -->
-    48|    <script type="application/ld+json">
-    49|    {
-    50|        "@context": "https://schema.org",
-    51|        "@type": "WebApplication",
-    52|        "name": "AI Text Summarizer",
-    53|        "description": "100% free AI-powered text summarizer that creates concise summaries from long articles and documents",
-    54|        "url": "https://ai-text-summarizer.vercel.app/",
-    55|        "applicationCategory": "LegalApplication",
-    56|        "operatingSystem": "Any",
-    57|        "browserRequirements": "Requires JavaScript",
-    58|        "offers": {
-    59|            "@type": "Offer",
-    60|            "price": "0",
-    61|            "priceCurrency": "USD"
-    62|        },
-    63|        "featureList": [
-    64|            "AI-powered legal document simplification",
-    65|            "Contract translation to plain English",
-    66|            "Key points extraction",
-    67|            "Risk analysis and warnings",
-    68|            "Terms of service decoder",
-    69|            "No signup required",
-    70|            "100% free"
-    71|        ],
-    72|        "aggregateRating": {
-    73|            "@type": "AggregateRating",
-    74|            "ratingValue": "4.9",
-    75|            "ratingCount": "3247",
-    76|            "bestRating": "5",
-    77|            "worstRating": "1"
-    78|        }
-    79|    }
-    80|    </script>
-    81|    
-    82|    <!-- Structured Data: FAQPage -->
-    83|    <script type="application/ld+json">
-    84|    {
-    85|        "@context": "https://schema.org",
-    86|        "@type": "FAQPage",
-    87|        "mainEntity": [
-    88|            {
-    89|                "@type": "Question",
-    90|                "name": "Is this legal document simplifier really free?",
-    91|                "acceptedAnswer": {
-    92|                    "@type": "Answer",
-    93|                    "text": "Yes, AI Text Summarizer is 100% free to use. We're supported by ads, so you can translate and simplify legal documents at no cost. No credit card or signup required."
-    94|                }
-    95|            },
-    96|            {
-    97|                "@type": "Question",
-    98|                "name": "What types of legal documents can I simplify?",
-    99|                "acceptedAnswer": {
-   100|                    "@type": "Answer",
-   101|                    "text": "You can simplify any legal document including contracts, rental agreements, employment agreements, terms of service, privacy policies, loan documents, insurance policies, NDAs, and more. Our AI understands various legal document formats."
-   102|                }
-   103|            },
-   104|            {
-   105|                "@type": "Question",
-   106|                "name": "How does the AI legal translator work?",
-   107|                "acceptedAnswer": {
-   108|                    "@type": "Answer",
-   109|                    "text": "Our AI analyzes complex legal language and translates it into plain English. It identifies key points you need to know, potential risks or concerns, and explains what the legal text means in everyday language."
-   110|                }
-   111|            },
-   112|            {
-   113|                "@type": "Question",
-   114|                "name": "Is this legal advice?",
-   115|                "acceptedAnswer": {
-   116|                    "@type": "Answer",
-   117|                    "text": "No, this is not legal advice. Our tool is for educational purposes only to help you understand legal documents. For important legal decisions, always consult with a qualified attorney."
-   118|                }
-   119|            },
-   120|            {
-   121|                "@type": "Question",
-   122|                "name": "Is my document data secure?",
-   123|                "acceptedAnswer": {
-   124|                    "@type": "Answer",
-   125|                    "text": "Yes. Your legal documents are processed securely and are not stored on our servers. We don't share, sell, or use your documents for any purpose other than providing the simplification service."
-   126|                }
-   127|            }
-   128|        ]
-   129|    }
-   130|    </script>
-   131|    
-   132|    <!-- Structured Data: HowTo -->
-   133|    <script type="application/ld+json">
-   134|    {
-   135|        "@context": "https://schema.org",
-   136|        "@type": "HowTo",
-   137|        "name": "How to Simplify Legal Documents with AI",
-   138|        "description": "100% free AI-powered text summarizer that creates concise summaries from long articles and documents",
-   139|        "totalTime": "PT2M",
-   140|        "tool": {
-   141|            "@type": "HowToTool",
-   142|            "name": "AI Text Summarizer"
-   143|        },
-   144|        "step": [
-   145|            {
-   146|                "@type": "HowToStep",
-   147|                "name": "Paste Legal Text",
-   148|                "text": "Copy and paste your legal document, contract, or agreement text into the input field",
-   149|                "position": 1
-   150|            },
-   151|            {
-   152|                "@type": "HowToStep",
-   153|                "name": "AI Analysis",
-   154|                "text": "Click 'Simplify Document' and our AI will analyze the legal language and translate it to plain English",
-   155|                "position": 2
-   156|            },
-   157|            {
-   158|                "@type": "HowToStep",
-   159|                "name": "Review Results",
-   160|                "text": "Get a simplified explanation, key points to know, and potential risks or concerns highlighted",
-   161|                "position": 3
-   162|            }
-   163|        ]
-   164|    }
-   165|    </script>
-   166|    
-   167|    <style>
-   168|        :root {
-   169|            --primary: #1e40af;
-   170|            --primary-hover: #1e3a8a;
-   171|            --success: #10b981;
-   172|            --warning: #f59e0b;
-   173|            --danger: #ef4444;
-   174|            --bg: #0f172a;
-   175|            --bg-card: #1e293b;
-   176|            --bg-input: #334155;
-   177|            --text: #f1f5f9;
-   178|            --text-muted: #94a3b8;
-   179|            --border: #475569;
-   180|            --accent: #3b82f6;
-   181|        }
-   182|        
-   183|        * { box-sizing: border-box; margin: 0; padding: 0; }
-   184|        
-   185|        body {
-   186|            font-family: system-ui, -apple-system, sans-serif;
-   187|            background: var(--bg);
-   188|            color: var(--text);
-   189|            line-height: 1.6;
-   190|            min-height: 100vh;
-   191|            padding-bottom: 100px;
-   192|        }
-   193|        
-   194|        /* Main layout with sidebars */
-   195|        .page-wrapper {
-   196|            display: flex;
-   197|            justify-content: center;
-   198|            gap: 20px;
-   199|            max-width: 1400px;
-   200|            margin: 0 auto;
-   201|            padding: 0 10px;
-   202|        }
-   203|        
-   204|        .sidebar {
-   205|            width: 160px;
-   206|            flex-shrink: 0;
-   207|            position: sticky;
-   208|            top: 80px;
-   209|            height: fit-content;
-   210|            max-height: calc(100vh - 100px);
-   211|        }
-   212|        
-   213|        .sidebar-ad {
-   214|            width: 160px;
-   215|            min-height: 600px;
-   216|            background: var(--bg-card);
-   217|            border: 1px dashed var(--border);
-   218|            border-radius: 8px;
-   219|            display: flex;
-   220|            align-items: center;
-   221|            justify-content: center;
-   222|            position: relative;
-   223|        }
-   224|        
-   225|        .main-content {
-   226|            flex: 1;
-   227|            max-width: 900px;
-   228|            min-width: 0;
-   229|        }
-   230|        
-   231|        @media (max-width: 1100px) {
-   232|            .sidebar { display: none; }
-   233|        }
-   234|        
-   235|        .container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
-   236|        
-   237|        /* Header */
-   238|        header {
-   239|            background: var(--bg-card);
-   240|            border-bottom: 1px solid var(--border);
-   241|            padding: 1rem;
-   242|            position: sticky;
-   243|            top: 0;
-   244|            z-index: 100;
-   245|        }
-   246|        
-   247|        .header-content {
-   248|            display: flex;
-   249|            justify-content: space-between;
-   250|            align-items: center;
-   251|            max-width: 1400px;
-   252|            margin: 0 auto;
-   253|            padding: 0 10px;
-   254|        }
-   255|        
-   256|        .logo {
-   257|            font-size: 1.5rem;
-   258|            font-weight: 700;
-   259|            color: var(--primary);
-   260|            text-decoration: none;
-   261|            display: flex;
-   262|            align-items: center;
-   263|            gap: 0.5rem;
-   264|        }
-   265|        
-   266|        nav a {
-   267|            color: var(--text-muted);
-   268|            text-decoration: none;
-   269|            margin-left: 1.5rem;
-   270|            font-size: 0.9rem;
-   271|        }
-   272|        
-   273|        nav a:hover { color: var(--text); }
-   274|        
-   275|        /* Hero */
-   276|        .hero {
-   277|            text-align: center;
-   278|            padding: 2rem 1rem;
-   279|            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 100%);
-   280|        }
-   281|        
-   282|        .hero h1 {
-   283|            font-size: clamp(1.5rem, 4vw, 2.25rem);
-   284|            margin-bottom: 0.75rem;
-   285|            line-height: 1.2;
-   286|        }
-   287|        
-   288|        .hero h1 span { color: var(--accent); }
-   289|        
-   290|        .hero p {
-   291|            color: var(--text-muted);
-   292|            max-width: 600px;
-   293|            margin: 0 auto 1rem;
-   294|        }
-   295|        
-   296|        .badges {
-   297|            display: flex;
-   298|            justify-content: center;
-   299|            gap: 0.75rem;
-   300|            flex-wrap: wrap;
-   301|        }
-   302|        
-   303|        .badge {
-   304|            background: var(--bg-input);
-   305|            padding: 0.4rem 0.75rem;
-   306|            border-radius: 50px;
-   307|            font-size: 0.8rem;
-   308|        }
-   309|        
-   310|        /* Ad slots */
-   311|        .ad-slot {
-   312|            background: var(--bg-card);
-   313|            border: 1px dashed var(--border);
-   314|            border-radius: 8px;
-   315|            display: flex;
-   316|            align-items: center;
-   317|            justify-content: center;
-   318|            margin: 1rem auto;
-   319|            position: relative;
-   320|            overflow: hidden;
-   321|        }
-   322|        
-   323|        .ad-slot-leaderboard { width: 100%; max-width: 728px; min-height: 90px; height: 90px; }
-   324|        .ad-slot-large { width: 100%; max-width: 728px; min-height: 250px; }
-   325|        .ad-slot-infeed { width: 100%; max-width: 728px; min-height: 90px; margin: 1.5rem auto; }
-   326|        .ad-slot-mobile { display: none; width: 100%; min-height: 100px; margin: 1rem auto; }
-   327|        .ad-slot-sticky {
-   328|            position: fixed;
-   329|            bottom: 0;
-   330|            left: 0;
-   331|            right: 0;
-   332|            height: 90px;
-   333|            min-height: 90px;
-   334|            margin: 0;
-   335|            border-radius: 0;
-   336|            border: none;
-   337|            border-top: 1px solid var(--border);
-   338|            z-index: 1000;
-   339|            background: var(--bg-card);
-   340|        }
-   341|        
-   342|        .ad-placeholder {
-   343|            position: absolute;
-   344|            color: var(--text-muted);
-   345|            font-size: 0.7rem;
-   346|            text-transform: uppercase;
-   347|            letter-spacing: 0.1em;
-   348|            opacity: 0.5;
-   349|        }
-   350|        
-   351|        .mobile-only { display: none; }
-   352|        
-   353|        @media (max-width: 768px) {
-   354|            /* Resize large ads for mobile */
-   355|            .ad-slot-leaderboard { max-width: 320px; height: 100px; }
-   356|            .ad-slot-large { max-width: 300px; height: 250px; margin: 1rem auto; }
-   357|            
-   358|            /* Show mobile ads */
-   359|            .ad-slot-mobile { display: flex !important; }
-   360|            .mobile-only { display: flex !important; }
-   361|            
-   362|            /* Sticky bottom ad */
-   363|            .ad-slot-sticky { 
-   364|                height: 60px; 
-   365|                min-height: 60px; 
-   366|                position: fixed;
-   367|                bottom: 0;
-   368|                left: 0;
-   369|                right: 0;
-   370|                z-index: 1000;
-   371|                background: var(--bg);
-   372|                border-top: 1px solid var(--border);
-   373|            }
-   374|            
-   375|            body { padding-bottom: 70px; }
-   376|            
-   377|            .container { 
-   378|                padding: 1rem 0.75rem;
-   379|                margin: 0 auto;
-   380|                max-width: 100%;
-   381|            }
-   382|        }
-   383|        
-   384|        /* Main Form */
-   385|        .form-card {
-   386|            background: var(--bg-card);
-   387|            border-radius: 12px;
-   388|            padding: 1.5rem;
-   389|            border: 1px solid var(--border);
-   390|            margin-bottom: 1rem;
-   391|        }
-   392|        
-   393|        .form-card h2 {
-   394|            font-size: 1.25rem;
-   395|            margin-bottom: 1rem;
-   396|            display: flex;
-   397|            align-items: center;
-   398|            gap: 0.5rem;
-   399|        }
-   400|        
-   401|        /* Form Elements */
-   402|        .form-group { margin-bottom: 1rem; }
-   403|        
-   404|        label {
-   405|            display: block;
-   406|            margin-bottom: 0.4rem;
-   407|            font-weight: 500;
-   408|            font-size: 0.9rem;
-   409|        }
-   410|        
-   411|        textarea {
-   412|            width: 100%;
-   413|            padding: 1rem;
-   414|            background: var(--bg-input);
-   415|            border: 1px solid var(--border);
-   416|            border-radius: 8px;
-   417|            color: var(--text);
-   418|            font-size: 1rem;
-   419|            font-family: inherit;
-   420|            min-height: 300px; max-length: 10000;
-   421|            resize: vertical;
-   422|        }
-   423|        
-   424|        textarea:focus {
-   425|            outline: none;
-   426|            border-color: var(--primary);
-   427|        }
-   428|        
-   429|        .char-count {
-   430|            text-align: right;
-   431|            font-size: 0.8rem;
-   432|            color: var(--text-muted);
-   433|            margin-top: 0.25rem;
-   434|        }
-   435|        
-   436|        /* Buttons */
-   437|        .btn {
-   438|            display: inline-flex;
-   439|            align-items: center;
-   440|            justify-content: center;
-   441|            gap: 0.5rem;
-   442|            padding: 0.75rem 1.5rem;
-   443|            background: var(--primary);
-   444|            color: white;
-   445|            border: none;
-   446|            border-radius: 8px;
-   447|            font-size: 1rem;
-   448|            font-weight: 600;
-   449|            cursor: pointer;
-   450|            transition: all 0.2s;
-   451|            width: 100%;
-   452|        }
-   453|        
-   454|        .btn:hover { background: var(--primary-hover); }
-   455|        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-   456|        
-   457|        .btn-secondary {
-   458|            background: var(--bg-input);
-   459|            color: var(--text);
-   460|        }
-   461|        
-   462|        .btn-secondary:hover {
-   463|            background: var(--border);
-   464|        }
-   465|        
-   466|        /* Results */
-   467|        .results {
-   468|            display: none;
-   469|            margin-top: 2rem;
-   470|        }
-   471|        
-   472|        .results.show {
-   473|            display: block;
-   474|        }
-   475|        
-   476|        .result-section {
-   477|            background: var(--bg-card);
-   478|            border-radius: 12px;
-   479|            padding: 1.5rem;
-   480|            border: 1px solid var(--border);
-   481|            margin-bottom: 1rem;
-   482|        }
-   483|        
-   484|        .result-section h3 {
-   485|            font-size: 1.1rem;
-   486|            margin-bottom: 1rem;
-   487|            display: flex;
-   488|            align-items: center;
-   489|            gap: 0.5rem;
-   490|        }
-   491|        
-   492|        .result-content {
-   493|            line-height: 1.7;
-   494|            color: var(--text-muted);
-   495|        }
-   496|        
-   497|        .key-points, .risks {
-   498|            list-style: none;
-   499|            padding: 0;
-   500|        }
-   501|
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Text Summarizer | Intelligent Article Summarization Tool</title>
+    <meta name="description" content="Summarize long articles, documents, and texts instantly with AI. Our intelligent summarizer extracts key points and creates concise summaries. Perfect for research and study. No signup required.">
+    <meta name="keywords" content="ai text summarizer, article summarizer, document summarizer, text summary generator, ai summary tool, content summarizer, research summarizer, study tool, text analysis, automatic summarization">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ai-text-summarizer.vercel.app/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Legal Document Simplifier - AI-Powered Legal Text Translator">
+    <meta property="og:description" content="Transform complex legal documents into plain English instantly with AI. Free legal jargon decoder for contracts, agreements, and legal text.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-text-summarizer.vercel.app/">
+    <meta property="og:site_name" content="Ai Text Summarizer">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Legal Document Simplifier - AI-Powered Legal Text Translator">
+    <meta name="twitter:description" content="Transform complex legal documents into plain English instantly. Free AI-powered legal jargon decoder.">
+    
+    <!-- Additional SEO Meta -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Ai Text Summarizer">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Ai Text Summarizer">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Auto Ads for Additional Revenue -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-XXXXXXXXXX",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Ai Text Summarizer",
+        "description": "100% free AI-powered legal document simplifier that translates complex legal language into easy-to-understand plain English",
+        "url": "https://ai-text-summarizer.vercel.app/",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "AI-powered legal document simplification",
+            "Contract translation to plain English",
+            "Key points extraction",
+            "Risk analysis and warnings",
+            "Terms of service decoder",
+            "No signup required",
+            "100% free"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "3247",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is this legal document simplifier really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Ai Text Summarizer is 100% free to use. We're supported by ads, so you can translate and simplify legal documents at no cost. No credit card or signup required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of legal documents can I simplify?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can simplify any legal document including contracts, rental agreements, employment agreements, terms of service, privacy policies, loan documents, insurance policies, NDAs, and more. Our AI understands various legal document formats."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the AI legal translator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our AI analyzes complex legal language and translates it into plain English. It identifies key points you need to know, potential risks or concerns, and explains what the legal text means in everyday language."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this legal advice?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, this is not legal advice. Our tool is for educational purposes only to help you understand legal documents. For important legal decisions, always consult with a qualified attorney."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my document data secure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your legal documents are processed securely and are not stored on our servers. We don't share, sell, or use your documents for any purpose other than providing the simplification service."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Structured Data: HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Simplify Legal Documents with AI",
+        "description": "Learn how to translate complex legal language into plain English in 3 easy steps using our free AI legal document simplifier",
+        "totalTime": "PT2M",
+        "tool": {
+            "@type": "HowToTool",
+            "name": "Ai Text Summarizer"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Paste Legal Text",
+                "text": "Copy and paste your legal document, contract, or agreement text into the input field",
+                "position": 1
+            },
+            {
+                "@type": "HowToStep",
+                "name": "AI Analysis",
+                "text": "Click 'Simplify Document' and our AI will analyze the legal language and translate it to plain English",
+                "position": 2
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Review Results",
+                "text": "Get a simplified explanation, key points to know, and potential risks or concerns highlighted",
+                "position": 3
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-hover: #1e3a8a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-input: #334155;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #475569;
+            --accent: #3b82f6;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 100px;
+        }
+        
+        /* Main layout with sidebars */
+        .page-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .sidebar {
+            width: 160px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+            max-height: calc(100vh - 100px);
+        }
+        
+        .sidebar-ad {
+            width: 160px;
+            min-height: 600px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .main-content {
+            flex: 1;
+            max-width: 900px;
+            min-width: 0;
+        }
+        
+        @media (max-width: 1100px) {
+            .sidebar { display: none; }
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover { color: var(--text); }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 100%);
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span { color: var(--accent); }
+        
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: var(--bg-input);
+            padding: 0.4rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        /* Ad slots */
+        .ad-slot {
+            background: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-slot-leaderboard { width: 100%; max-width: 728px; min-height: 90px; height: 90px; }
+        .ad-slot-large { width: 100%; max-width: 728px; min-height: 250px; }
+        .ad-slot-infeed { width: 100%; max-width: 728px; min-height: 90px; margin: 1.5rem auto; }
+        .ad-slot-mobile { display: none; width: 100%; min-height: 100px; margin: 1rem auto; }
+        .ad-slot-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            min-height: 90px;
+            margin: 0;
+            border-radius: 0;
+            border: none;
+            border-top: 1px solid var(--border);
+            z-index: 1000;
+            background: var(--bg-card);
+        }
+        
+        .ad-placeholder {
+            position: absolute;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+        
+        .mobile-only { display: none; }
+        
+        @media (max-width: 768px) {
+            /* Resize large ads for mobile */
+            .ad-slot-leaderboard { max-width: 320px; height: 100px; }
+            .ad-slot-large { max-width: 300px; height: 250px; margin: 1rem auto; }
+            
+            /* Show mobile ads */
+            .ad-slot-mobile { display: flex !important; }
+            .mobile-only { display: flex !important; }
+            
+            /* Sticky bottom ad */
+            .ad-slot-sticky { 
+                height: 60px; 
+                min-height: 60px; 
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                background: var(--bg);
+                border-top: 1px solid var(--border);
+            }
+            
+            body { padding-bottom: 70px; }
+            
+            .container { 
+                padding: 1rem 0.75rem;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+        }
+        
+        /* Main Form */
+        .form-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+        
+        .form-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Form Elements */
+        .form-group { margin-bottom: 1rem; }
+        
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+            min-height: 200px;
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .char-count {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+        
+        .btn:hover { background: var(--primary-hover); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        
+        .btn-secondary {
+            background: var(--bg-input);
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        /* Results */
+        .results {
+            display: none;
+            margin-top: 2rem;
+        }
+        
+        .results.show {
+            display: block;
+        }
+        
+        .result-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+        
+        .result-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .result-content {
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        
+        .key-points, .risks {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-points li, .risks li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .key-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .risks li::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: var(--warning);
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 2px solid var(--border);
+            border-top: 2px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Error */
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1rem;
+            color: #fca5a5;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .error.show {
+            display: block;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                📝 Ai Text Summarizer
+            </a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar Ad -->
+        <aside class="sidebar">
+            <div class="sidebar-ad">
+                <div class="ad-placeholder">160x600 Left Skyscraper</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="1313131313" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Turn Long Text Into <span>Key Insights</span></h1>
+                <p>Free AI-powered text summarizer. Extract key points from articles, research papers, and documents. Get concise summaries in seconds.</p>
+                <div class="badges">
+                    <span class="badge">✨ 100% Free</span>
+                    <span class="badge">🚀 No Signup</span>
+                    <span class="badge">🔒 Secure</span>
+                    <span class="badge">⚡ Instant</span>
+                </div>
+            </section>
+
+            <!-- Primary Header Ad -->
+            <div class="ad-slot ad-slot-leaderboard">
+                <div class="ad-placeholder">728x90 Leaderboard Ad - Header</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="leaderboard"></ins>
+            </div>
+
+
+
+            <!-- Above Form Large Rectangle -->
+            <div class="ad-slot ad-slot-large">
+                <div class="ad-placeholder">728x250 Large Rectangle - Above Form</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="rectangle, large_rectangle"></ins>
+            </div>
+
+            <!-- Main Form -->
+            <div class="container">
+                <div class="form-card">
+                    <h2>📝 Paste Your Text to Summarize</h2>
+                    <div class="form-group">
+                        <label for="legalText">Text to Summarize (up to 10,000 characters)</label>
+                        <textarea 
+                            id="legalText" 
+                            placeholder="Example: 'Climate change refers to long-term shifts in global temperatures and weather patterns. While climate variations are natural, since the 1800s human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas...'"
+                            maxlength="5000"
+                        ></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/5,000 characters
+                        </div>
+                    </div>
+                    
+                    <div class="error" id="errorMessage"></div>
+                    
+                    <button class="btn" id="simplifyBtn" onclick="simplifyDocument()">
+📝 Summarize Text
+                    </button>
+                    
+                    <button class="btn btn-secondary" id="resetBtn" onclick="resetForm()" style="display:none; margin-top: 0.5rem;">
+                        🔄 Try Another Document
+                    </button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading" id="loadingState">
+                    <div class="spinner"></div>
+                    <p>Analyzing legal document...</p>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results" id="resultsSection">
+                    <!-- Results Top Banner -->
+                    <div class="ad-slot ad-slot-leaderboard">
+                        <div class="ad-placeholder">728x90 Results Banner</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="4444444444" data-ad-format="leaderboard"></ins>
+                    </div>
+
+                    <!-- Mobile Ad (shown after interaction) -->
+                    <div class="ad-slot ad-slot-mobile">
+                        <div class="ad-placeholder">Mobile Rectangle</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="5555555555" data-ad-format="rectangle"></ins>
+                    </div>
+
+                    <!-- Simplified Explanation -->
+                    <div class="result-section">
+                        <h3>📝 Simplified Explanation</h3>
+                        <div class="result-content" id="simplifiedText"></div>
+                    </div>
+
+                    <!-- Key Points -->
+                    <div class="result-section">
+                        <h3>✅ Key Points</h3>
+                        <ul class="key-points" id="keyPoints"></ul>
+                    </div>
+
+                    <!-- Mid-Results Large Rectangle (moved here for better UX) -->
+                    <div class="ad-slot ad-slot-large">
+                        <div class="ad-placeholder">728x250 Large Rectangle - Mid Results</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="rectangle, large_rectangle"></ins>
+                    </div>
+
+                    <!-- Between Sections Ad -->
+                    <div class="ad-slot ad-slot-infeed">
+                        <div class="ad-placeholder">728x90 In-feed Ad</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="7777777777" data-ad-format="leaderboard"></ins>
+                    </div>
+
+                    <!-- Risks -->
+                    <div class="result-section">
+                        <h3>⚠️ Potential Concerns</h3>
+                        <ul class="risks" id="riskPoints"></ul>
+                    </div>
+
+                    <!-- Post-Analysis Large Ad -->
+                    <div class="ad-slot ad-slot-large">
+                        <div class="ad-placeholder">728x250 Large Rectangle - Post Analysis</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="rectangle, large_rectangle"></ins>
+                    </div>
+
+                    <!-- Legal Disclaimer -->
+                    <div class="result-section" style="background: rgba(59, 130, 246, 0.1); border-color: var(--primary);">
+                        <h3>📝 Legal Disclaimer</h3>
+                        <div class="result-content">
+                            <p>This simplified explanation is for educational purposes only and should not be considered legal advice. Always consult with a qualified attorney for important legal matters.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Ads (shown after document analysis) -->
+                <div class="ad-slot ad-slot-mobile mobile-only" style="margin: 1rem 0;">
+                    <div class="ad-placeholder">320x100 Mobile Banner - Post Analysis</div>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                </div>
+
+                <!-- Features Section -->
+                <section id="features" class="features">
+                    <div class="feature">
+                        <h3>⚡ Instant Translation</h3>
+                        <p>Get simplified explanations in seconds, not hours. Our AI processes legal text instantly.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🎯 Key Points</h3>
+                        <p>Automatically extracts the most important clauses and provisions you need to understand.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>⚠️ Risk Analysis</h3>
+                        <p>Identifies potential concerns, risks, and red flags in your legal documents.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🔒 100% Secure</h3>
+                        <p>Your documents are processed securely and never stored on our servers.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>📱 Any Device</h3>
+                        <p>Works perfectly on desktop, tablet, and mobile devices. Use anywhere, anytime.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>💰 Always Free</h3>
+                        <p>No hidden costs, no signup required. Completely free legal document simplifier.</p>
+                    </div>
+                </section>
+
+                <!-- Large Ad -->
+                <div class="ad-slot ad-slot-large">
+                    <div class="ad-placeholder">728x250 Large Ad</div>
+                    <!-- Replace with actual ad code -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle, large_rectangle"></ins>
+                </div>
+
+                <!-- How it Works -->
+                <section id="how-it-works">
+                    <div class="form-card">
+                        <h2>🔍 How It Works</h2>
+                        <div class="features">
+                            <div style="text-align: center;">
+                                <h3>1️⃣ Paste Legal Text</h3>
+                                <p>Copy and paste any legal document, contract, or agreement into our tool.</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <h3>2️⃣ AI Analysis</h3>
+                                <p>Our advanced AI analyzes the complex legal language and terminology.</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <h3>3️⃣ Get Plain English</h3>
+                                <p>Receive a clear explanation, key points, and potential concerns highlighted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq">
+                    <div class="form-card">
+                        <h2>❓ Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">What types of legal documents can I simplify?</div>
+                            <div class="faq-answer">You can simplify any legal document including contracts, rental agreements, employment agreements, terms of service, privacy policies, loan documents, insurance policies, NDAs, and more.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Is this tool really free?</div>
+                            <div class="faq-answer">Yes, Ai Text Summarizer is completely free to use. We're supported by advertising, so you can simplify unlimited legal documents without any cost or signup.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Is my document data secure?</div>
+                            <div class="faq-answer">Absolutely. Your legal documents are processed securely and are not stored on our servers. We don't share, sell, or use your documents for any purpose other than providing the simplification.</div>
+                        </div>
+
+                        <!-- FAQ Mid Ad -->
+                        <div class="ad-slot ad-slot-leaderboard" style="margin: 2rem auto;">
+                            <div class="ad-placeholder">728x90 FAQ Mid Banner</div>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="9999999999" data-ad-format="leaderboard"></ins>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Should I still consult a lawyer?</div>
+                            <div class="faq-answer">For important legal decisions, yes. Our tool helps you understand documents, but it's not legal advice. Always consult with a qualified attorney for critical legal matters.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How accurate is the AI simplification?</div>
+                            <div class="faq-answer">Our AI is trained on extensive legal datasets and provides highly accurate simplifications. However, complex legal nuances may require professional interpretation.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can I use this for business contracts?</div>
+                            <div class="faq-answer">Yes, you can simplify business contracts, but for important business decisions, we recommend having a legal professional review the original document.</div>
+                        </div>
+
+                        <!-- FAQ Bottom Large Ad -->
+                        <div class="ad-slot ad-slot-large" style="margin: 2rem auto;">
+                            <div class="ad-placeholder">728x250 FAQ Bottom Large Rectangle</div>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="rectangle, large_rectangle"></ins>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Right Sidebar Ad -->
+        <aside class="sidebar">
+            <div class="sidebar-ad">
+                <div class="ad-placeholder">160x600 Skyscraper</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="1010101010" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Sticky Bottom Ad -->
+    <div class="ad-slot ad-slot-sticky">
+        <div class="ad-placeholder">728x90 Sticky Bottom Banner</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="1212121212" data-ad-format="leaderboard"></ins>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ai Text Summarizer. Made with ❤️ for everyone who needs legal documents simplified.</p>
+        <div>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Character counter
+        const textarea = document.getElementById('legalText');
+        const charCount = document.getElementById('charCount');
+        
+        textarea.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
+        });
+
+        // API endpoint for Vercel
+        const API_ENDPOINT = '/api/simplify';
+
+        async function simplifyDocument() {
+            const text = textarea.value.trim();
+            const errorDiv = document.getElementById('errorMessage');
+            const loadingDiv = document.getElementById('loadingState');
+            const resultsDiv = document.getElementById('resultsSection');
+            const simplifyBtn = document.getElementById('simplifyBtn');
+            const resetBtn = document.getElementById('resetBtn');
+
+            // Clear previous errors
+            errorDiv.classList.remove('show');
+
+            // Validation
+            if (!text) {
+                showError('Please enter some legal text to simplify.');
+                return;
+            }
+
+            if (text.length > 5000) {
+                showError('Text is too long. Please keep it under 5,000 characters.');
+                return;
+            }
+
+            // Show loading state
+            simplifyBtn.disabled = true;
+            loadingDiv.classList.add('show');
+            resultsDiv.classList.remove('show');
+
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: text }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to simplify document');
+                }
+
+                const data = await response.json();
+                displayResults(data);
+                
+                // Show reset button
+                resetBtn.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                // Show demo results as fallback
+                const demoData = {
+                    simplified: `This document is a legal agreement where you (the first party) agree to protect and defend another person or company (the second party) from any legal problems, claims, or costs that might come up.\n\nIn simple terms:\n• If someone sues the second party for something related to this agreement, you will handle the legal costs\n• You will pay for any damages or settlements that result from these legal issues\n• You take responsibility for defending them in court if needed\n\nThis is called an "indemnification clause" and it's commonly found in service contracts, rental agreements, and business partnerships. It's designed to shift legal risk from one party to another.\n\nNote: This is a demo response. For real AI analysis, the site owner needs to add an OpenAI API key.`,
+                    keyPoints: [
+                        "You agree to protect the other party from legal claims",
+                        "You will pay for legal costs and damages on their behalf",
+                        "This applies to issues related to this specific agreement",
+                        "You become responsible for their legal defense in related matters",
+                        "This is a standard risk-shifting clause in contracts"
+                    ],
+                    risks: [
+                        "Unlimited financial liability - costs could be very high",
+                        "You could pay for problems you didn't directly cause",
+                        "Legal costs can accumulate quickly even for frivolous claims",
+                        "You may have little control over how the other party handles situations",
+                        "This clause typically favors the other party heavily"
+                    ]
+                };
+                
+                displayResults(demoData);
+                resetBtn.style.display = 'block';
+            } finally {
+                simplifyBtn.disabled = false;
+                loadingDiv.classList.remove('show');
+            }
+        }
+
+        function displayResults(data) {
+            const simplifiedDiv = document.getElementById('simplifiedText');
+            const keyPointsList = document.getElementById('keyPoints');
+            const risksList = document.getElementById('riskPoints');
+            const resultsDiv = document.getElementById('resultsSection');
+
+            // Display simplified text
+            simplifiedDiv.innerHTML = data.simplified.replace(/\n/g, '<br>');
+
+            // Display key points
+            keyPointsList.innerHTML = '';
+            data.keyPoints.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point;
+                keyPointsList.appendChild(li);
+            });
+
+            // Display risks
+            risksList.innerHTML = '';
+            data.risks.forEach(risk => {
+                const li = document.createElement('li');
+                li.textContent = risk;
+                risksList.appendChild(li);
+            });
+
+            // Show results
+            resultsDiv.classList.add('show');
+            
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('show');
+        }
+
+        function resetForm() {
+            textarea.value = '';
+            charCount.textContent = '0';
+            document.getElementById('resultsSection').classList.remove('show');
+            document.getElementById('resetBtn').style.display = 'none';
+            document.getElementById('errorMessage').classList.remove('show');
+            textarea.focus();
+        }
+
+        // Initialize AdSense (if you have an account)
+        // (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>

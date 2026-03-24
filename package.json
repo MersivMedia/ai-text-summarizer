@@ -1,0 +1,9 @@
+{
+  "name": "legal-simple-ai",
+  "version": "1.0.0",
+  "description": "AI-powered legal document simplifier - translate complex legal text into plain English",
+  "private": true,
+  "dependencies": {
+    "openai": "^3.3.0"
+  }
+}
